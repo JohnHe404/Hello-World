@@ -1,3 +1,5 @@
+//P1 I/O口 控制循环亮灯单片机程序 2012/10/30                                       by 赫
+
 #include <reg52.h> //头文件
 void sleep(void);    
 void  main ()
