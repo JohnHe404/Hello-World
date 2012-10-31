@@ -2,7 +2,7 @@
 
 #include<reg52.h>
 
- void delays (int a);
+ void delays(int a);
 
     void main()
   {
