@@ -28,5 +28,6 @@ void  main ()
  void  sleep(void)
  {
    int i = 0;
- 	while (i++ <  10000) ;
+ 	//while (i++ <  10000) ;
+    while (i < 10000) i++;
  }

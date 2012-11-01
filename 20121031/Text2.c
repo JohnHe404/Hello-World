@@ -1,24 +1,24 @@
-//今天老师发的程序优化之后的版本                                              2012/10/31   by 赫
-
+//对源文件Text1.c的优化                                                                               
 #include<reg52.h>
 
- void delays(int a);
+
+ void delays (void);
 
     void main()
   {
 	while(1)
 	{
 		P1 = 0xfe;
-		delays(1000);
+		delays(); //去除不必要的传递给函数的值
 		P1 = 0xff;
-		delays(1000);
+		delays();
 	}
  }  
 
 
-   void delays(int a)	//延迟函数
+   void delays(void)	//延迟函数
  {
-	int i;
+	int i = 0;
 
-	for(i = 0;i<a*124;i++) ;
+	 while (i < 124000) i++;  //直接进行124000次循环
  }
