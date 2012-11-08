@@ -12,8 +12,8 @@ void main()
 		{
 			P1=a[i];
 		  sleep();
-    }  
-  }
+        }  
+    }
 }
 void sleep(void)
 {
