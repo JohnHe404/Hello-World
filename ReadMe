@@ -1,10 +1,6 @@
-单片机编译器使用的keil uvision3
-使用的单片机型号是STC89C52
-
-
-//程序所有权归本人所有，讨厌可耻的抄袭！！ 2012/11/08
-
-by  赫
+Bipolar //双极管
+Keyboard Output //键盘输出
+led Display panel //led显示板
 
 
 
