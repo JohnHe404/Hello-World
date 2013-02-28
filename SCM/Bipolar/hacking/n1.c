@@ -7,17 +7,17 @@ void main()
 	int i;
 
 	while(1){
-		i = 0;
-		m = 0x80;
-		n = 0x01;
-		while(i < 8){
-			number = m | n;//m或n
-			P1 = number;
-			sleep();
-			m >>= 1;//移位
-			n <<= 1;
-			i++;
-		}
+	  i = 0;
+	  m = 0x80;
+	  n = 0x01;
+	  while(i < 8){
+	    number = m | n;//m或n
+	    P1 = number;
+	    sleep();
+	    m >>= 1;//移位
+	    n <<= 1;
+	    i++;
+	  }
 	}
 }
 
