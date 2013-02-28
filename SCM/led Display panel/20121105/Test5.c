@@ -1,4 +1,4 @@
-//2012/11/05×îºóÎ»Êä³ö8                    byºÕ    
+//2012/11/05æœ€åä½è¾“å‡º8                    byèµ«    
 #include <reg52.h>
 void sleep(void);
 void main()

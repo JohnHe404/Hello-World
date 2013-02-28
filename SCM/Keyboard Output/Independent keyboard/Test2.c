@@ -1,22 +1,22 @@
-//¶ÀÁ¢¼üÅÌ¿ØÖÆledÊı×Ö°åÏÔÊ¾Óë¶àÎ»Ë«¼«ÁÁµÆ
+//ç‹¬ç«‹é”®ç›˜æ§åˆ¶ledæ•°å­—æ¿æ˜¾ç¤ºä¸å¤šä½åŒæäº®ç¯
 
-#include <reg52.h>//µ÷ÓÃÍ·ÎÄ¼şreg52.h
+#include <reg52.h>//è°ƒç”¨å¤´æ–‡ä»¶reg52.h
 
-#define uchar unsigned char //¶¨ÒåucharÀàĞÍ
+#define uchar unsigned char //å®šä¹‰ucharç±»å‹
 
 
-int flag = 0;//Î»
-int num = 0;//Êı×Ö
-uchar a[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8 Î»
-uchar b[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9 ¶Î
-uchar c[8] ={0x7f,0x3f,0x1f,0x0f,0x07,0x03,0x01,0x00}; //Ë«¼«¹Ü
-sbit key1 = P0^0;//¼üÅÌÊä³ö
+int flag = 0;//ä½
+int num = 0;//æ•°å­—
+uchar a[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8 ä½
+uchar b[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9 æ®µ
+uchar c[8] ={0x7f,0x3f,0x1f,0x0f,0x07,0x03,0x01,0x00}; //åŒæç®¡
+sbit key1 = P0^0;//é”®ç›˜è¾“å‡º
 sbit key2 = P0^1;
 sbit key3 = P0^2;
 sbit key4 = P0^3;
 
-void keyscan(void);//É¨Ãèº¯Êı
-void delays(void);//ÑÓ³Ùº¯Êı
+void keyscan(void);//æ‰«æå‡½æ•°
+void delays(void);//å»¶è¿Ÿå‡½æ•°
 void main()
 {
 	
@@ -25,23 +25,23 @@ void main()
 	{
 		keyscan();
 		
-		if(flag > 7) flag = 0;//flag 0-7Ö®¼ä¿ØÖÆ
-		if(flag < 0) flag = 7;//Í¬ÉÏ
-    if(num > 9) num = 0;//num 0-9Ö®¼ä¿ØÖÆ
-		if(num < 0) num = 9;//Í¬ÉÏ
-		P3 = P2 = a[flag];//´«µİ¸øP3,P2 I/O¿ÚÊä³ö
-		P1 = b[num]; //Í¬ÉÏ´«µİ¸øP1
+		if(flag > 7) flag = 0;//flag 0-7ä¹‹é—´æ§åˆ¶
+		if(flag < 0) flag = 7;//åŒä¸Š
+    if(num > 9) num = 0;//num 0-9ä¹‹é—´æ§åˆ¶
+		if(num < 0) num = 9;//åŒä¸Š
+		P3 = P2 = a[flag];//ä¼ é€’ç»™P3,P2 I/Oå£è¾“å‡º
+		P1 = b[num]; //åŒä¸Šä¼ é€’ç»™P1
 				
 	}
 }
-void keyscan(void) //Ó·Ö×µÄÉ¨Ãèº¯Êı
+void keyscan(void) //è‡ƒè‚¿çš„æ‰«æå‡½æ•°
 {
 	if(key1 == 0)
 	{
 		delays();
 		if(key1 == 0)
 			flag++;
-		while(!key1);//ÏŞÖÆ±ÜÃâ°´¼ü¶à´ÎÊäÈë
+		while(!key1);//é™åˆ¶é¿å…æŒ‰é”®å¤šæ¬¡è¾“å…¥
 	}
 
 	if(key2 == 0)
@@ -68,7 +68,7 @@ void keyscan(void) //Ó·Ö×µÄÉ¨Ãèº¯Êı
 		while(!key4);
 	}
 }
-void delays(void)//ÑÓ³Ù
+void delays(void)//å»¶è¿Ÿ
 {
 	int i;
 	int j;

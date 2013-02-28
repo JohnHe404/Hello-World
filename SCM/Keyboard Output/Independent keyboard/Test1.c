@@ -1,23 +1,23 @@
-//¶ÀÁ¢¼üÅÌ¿ØÖÆ
+//ç‹¬ç«‹é”®ç›˜æ§åˆ¶
 #include <reg52.h>
 
-#define uint unsigned int//¶¨ÒåuintÀàĞÍ
-#define uchar unsigned char//¶¨ÒåucharÀàĞÍ
+#define uint unsigned int//å®šä¹‰uintç±»å‹
+#define uchar unsigned char//å®šä¹‰ucharç±»å‹
 
-uint num = 1;//ledÏÔÊ¾µÄÊı×Ö
-uchar flag = 0;//ledÏÔÊ¾Î»
+uint num = 1;//ledæ˜¾ç¤ºçš„æ•°å­—
+uchar flag = 0;//ledæ˜¾ç¤ºä½
 
-uchar a[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8 Î»
-uchar b[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9 ¶Î
+uchar a[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8 ä½
+uchar b[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9 æ®µ
 
 
-sbit key1 = P0^0;//Á¬½Ó¼üÅÌµÄI/O¿Ú
+sbit key1 = P0^0;//è¿æ¥é”®ç›˜çš„I/Oå£
 sbit key2 = P0^1;
 sbit key3 = P0^2;
 sbit key4 = P0^3;
 
-void keyscan(void);//É¨Ãèº¯Êı
-void delays(void);//ÑÓ³Ùº¯Êı
+void keyscan(void);//æ‰«æå‡½æ•°
+void delays(void);//å»¶è¿Ÿå‡½æ•°
 void main()
 {
 	while(1)
@@ -27,7 +27,7 @@ void main()
 		if(num > 9)
 			num = 0;
 		
-		if(flag == 1)//¹Ø±ÕledÊä³ö
+		if(flag == 1)//å…³é—­ledè¾“å‡º
 		{
 		    P2 = 0xff;	
 			
@@ -40,7 +40,7 @@ void main()
 				
 	}
 }
-void keyscan(void)//É¨Ãèº¯Êı
+void keyscan(void)//æ‰«æå‡½æ•°
 {
 	if(key1 == 0)
 	{
@@ -74,7 +74,7 @@ void keyscan(void)//É¨Ãèº¯Êı
 		while(!key4);
 	}
 }
-void delays(void)//ÑÓ³Ùº¯Êı
+void delays(void)//å»¶è¿Ÿå‡½æ•°
 {
 	int i;
 	int j;

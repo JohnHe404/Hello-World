@@ -1,8 +1,8 @@
-//P1 I/O¿Ú ¿ØÖÆÑ­»·ÁÁµÆµ¥Æ¬»ú³ÌÐò 2012/10/30                                       by ºÕ
-//ÐÞ¸Ä2012/11/5     ¼õÉÙÑÓ³Ùº¯Êý¼ÆËã£¬·ñÔòµÆÁÁËÙ¶È¹ýÂý£¬µÆÁÁËÙ¶È3´ÎµÝÔö          byºÕ 
+//P1 I/Oå£ æŽ§åˆ¶å¾ªçŽ¯äº®ç¯å•ç‰‡æœºç¨‹åº 2012/10/30                                       by èµ«
+//ä¿®æ”¹2012/11/5     å‡å°‘å»¶è¿Ÿå‡½æ•°è®¡ç®—ï¼Œå¦åˆ™ç¯äº®é€Ÿåº¦è¿‡æ…¢ï¼Œç¯äº®é€Ÿåº¦3æ¬¡é€’å¢ž          byèµ« 
 
 
-#include <reg52.h> //Í·ÎÄ¼þ
+#include <reg52.h> //å¤´æ–‡ä»¶
 void sleep(int a);    
 void  main ()
 { 
@@ -11,10 +11,10 @@ void  main ()
 	while (1)
   {
 		b = 0;
-		while((a = b++*5000) < 20000)    //ÎÞÏÞÑ­»·
+		while((a = b++*5000) < 20000)    //æ— é™å¾ªçŽ¯
    {
-    P1=0x7f;   //0111 1111  ¿ØÖÆµçÁ÷
-	  sleep(a);     //µ÷ÓÃÑÓ³Ùº¯Êý
+    P1=0x7f;   //0111 1111  æŽ§åˆ¶ç”µæµ
+	  sleep(a);     //è°ƒç”¨å»¶è¿Ÿå‡½æ•°
 	  P1=0xbf;   //1011 1111
 	  sleep(a);
 	  P1=0xdf;   //1101 1111
@@ -36,6 +36,6 @@ void  main ()
  void  sleep(int a)
  {
    int i = 0;
- 	//while (i++ <  10000) ; ÓÅ»¯Ç°
-    while (i < a) i++; //ÓÅ»¯ºó
+ 	//while (i++ <  10000) ; ä¼˜åŒ–å‰
+    while (i < a) i++; //ä¼˜åŒ–åŽ
  }

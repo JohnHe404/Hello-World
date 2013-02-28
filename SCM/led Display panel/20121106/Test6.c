@@ -1,4 +1,4 @@
-//ledµÆÏÔÊ¾ P2Ñ¡ÔñÎ» P1¿ØÖÆ¶ÎÀ´ÏÔÊ¾0-99                 2012/11/06 byºÕ
+//ledç¯æ˜¾ç¤º P2é€‰æ‹©ä½ P1æ§åˆ¶æ®µæ¥æ˜¾ç¤º0-99                 2012/11/06 byèµ«
 #include <reg52.h>
 #define uchar unsigned char
 #define uint unsigned int
@@ -8,26 +8,26 @@ void main()
 {
   int k;
 	uint p;
-  uchar P_2[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8Êä³ö
-  uchar P_1[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9Êı×Ö	
+  uchar P_2[8] ={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};    //P2 1-8è¾“å‡º
+  uchar P_1[10] ={0x03,0x9f,0x25,0x0d,0x99,0x49,0x41,0x1f,0x01,0x09};  //P1 0-9æ•°å­—	
   while(1)
   {
 	  for(p = 0;p < MAX+1;p++)  
 	 {
 		 for(k = 0;k <3000;k++)
 		{ 
-		 	if(p > 999){P2 = P_2[4],P1 = P_1[p/1000%10];sleep();}//µÚ4Î»ÏÔÊ¾
+		 	if(p > 999){P2 = P_2[4],P1 = P_1[p/1000%10];sleep();}//ç¬¬4ä½æ˜¾ç¤º
 		
-			if(p > 99){P2 = P_2[5],P1 = P_1[p/100%10];sleep();} //µÚ3Î»ÏÔÊ¾
+			if(p > 99){P2 = P_2[5],P1 = P_1[p/100%10];sleep();} //ç¬¬3ä½æ˜¾ç¤º
 			
-			if(p > 9){P2 = P_2[6],P1 = P_1[p/10%10];sleep();} //µÚ2Î»ÏÔÊ¾
+			if(p > 9){P2 = P_2[6],P1 = P_1[p/10%10];sleep();} //ç¬¬2ä½æ˜¾ç¤º
 			
 			P2 = P_2[7],P1 = P_1[p%10];sleep();
 		}
 	 }
   }
 }
-void sleep(void) //ÑÓ³Ù±ØĞëÓĞ£¬·ñÔòÏÔÊ¾½«²»Õı³£
+void sleep(void) //å»¶è¿Ÿå¿…é¡»æœ‰ï¼Œå¦åˆ™æ˜¾ç¤ºå°†ä¸æ­£å¸¸
 {
   uchar i;
 	for(i = 70;i > 0;i--);
